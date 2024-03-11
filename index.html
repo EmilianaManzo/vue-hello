@@ -26,15 +26,25 @@
 </head>
 <body>
   <div id="app">
+    <h6 class="text-end "> {{ displayDateClock }} </h6>
     <h1>Il messaggio di oggi è : {{ message }}</h1>
     <div>
       <img :src="imageurl" :class="mieDim" alt="gif">
     </div>
+    <label>
+      Inserisci il tuo nome
+      <input type="text" class="form-control" v-model="text">
+      <button @click="isRed = !isRed">CAMBIO COLORE</button>
+    </label>
+    <h5>Ciao <span :class ="isRed ? 'rosso': ''">{{text}}</span>, questo è il tuo gattino!</h5>
     <div>
       <img :src="imageCat" alt="gattini">
     </div>
-    <!-- per capire se funziona inserendolo con v-html ma con gia presenti nomi delle variabili o se serve mettere percordo url o delle cartelle -->
-    <div v-html="imagehtml"></div>
+    <!-- questo lo prende solo se il booleano è true  -->
+    <p :class="{'rosso' : isRed }"> GATTARAAAAAAAAAA</p>
+
+    <!-- invoco una funzione direttamente dal click  -->
+    <p @click="salutoCongedo('Addio')">&hearts; {{adiosmex}} &hearts;</p>
 
   </div>
 
