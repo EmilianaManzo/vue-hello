@@ -10,3 +10,6 @@ Aggiungere alla pagina un’immagine, presa anch’essa da un data.
 2. richiamo vue in js
 3. creo la mia variabile message con una stringa 
 4. richiamo message in html in h1
+
+### Bonus
+1
