@@ -11,7 +11,9 @@ createApp({
       text: '',
       adiosmex :'',
       isRed : false,
-      displayDateClock : '00/00/0000 00:00:00'
+      displayDateClock : '00/00/0000 00:00:00',
+      counter: 10,
+      imgEnd:'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWhhYm82M21kemdxYmVucnczcXV4d2dpNTl1OGltZThrd3c5eG1yeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7FCFG6sYV5UxW/giphy.gif'
     }
 
   },
@@ -37,12 +39,27 @@ createApp({
 
     salutoCongedo (salutostring){
       this.adiosmex = `${salutostring} ${this.name} ci si vede alla prossima!`
+    },
+
+    timerCounter(){
+      counter--
+      this.counter === 0 ? this.imgEnd : ''  
+    },
+
+    startTimer(){
+      setInterval(()=>{
+        this.timerCounter()
+      },1000);
     }
+
+
   },
+  
 
   mounted(){
     this.printDateeClock(),
-    this.startDateeClock()
+    this.startDateeClock(),
+    this.timerCounter()
   }
 
 }).mount('#app');
