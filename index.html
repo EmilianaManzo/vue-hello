@@ -19,7 +19,7 @@
 
 
   <!-- Style -->
-
+  <link rel="stylesheet" href="assets/css/style.css">
 
   
   <title>Vue Hello</title>
@@ -28,8 +28,14 @@
   <div id="app">
     <h1>Il messaggio di oggi è : {{ message }}</h1>
     <div>
-      <img src="{{imageurl}}" alt="">
+      <img :src="imageurl" :class="mieDim" alt="gif">
     </div>
+    <div>
+      <img :src="imageCat" alt="gattini">
+    </div>
+    <!-- per capire se funziona inserendolo con v-html ma con gia presenti nomi delle variabili o se serve mettere percordo url o delle cartelle -->
+    <div v-html="imagehtml"></div>
+
   </div>
 
   <script src="javascript/script.js"></script>
